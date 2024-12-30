@@ -1,16 +1,17 @@
-// src/components/Dashboard.jsx
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const username = params.get('username');
 
   return (
-    <div>
-      <h1>Hello, {username}!</h1>
-    </div>
+    <>
+      <div className="greeting-box">
+        <h1>Hello, {sessionStorage.getItem("username")} !</h1>
+      </div>
+      <Link to={"/"}>
+        <button className="button-main">Back</button>
+      </Link>
+    </>
+
   );
 };
 

@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -16,7 +16,8 @@ const Login = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        navigate(`/dashboard?username=${data.username}`);
+        sessionStorage.setItem("username", data.username)
+        navigate(`/dashboard`);
       } else {
         alert('Invalid username or password');
       }
@@ -26,8 +27,8 @@ const Login = () => {
   };
 
   return (
-    <div className='loginBox'>
-      <h2>Login</h2>
+    <div className='loginbox'>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Username:
