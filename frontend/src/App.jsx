@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import IcosahedronVisualization from './components/IcosahedronVisualization';
-import MainPage from './components/mainPage';
+import MainPage from './components/MainPage';
 
 function App() {
   return (
